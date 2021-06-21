@@ -1,5 +1,8 @@
 function createCalculator(){
-    let result = document.getElementsByClassName('.result-desk');
+    let result = document.querySelector('.result-desk');
+    let equal = document.querySelector('.do');
+    let clear = document.querySelector('.clear');
+
 
     function numbersOnTheDesk(){
         let numbers = document.querySelectorAll('.N-button');
@@ -21,6 +24,7 @@ function createCalculator(){
             result.innerText = "";
         }         
     }
+    
     function operatorsOntheDesk(){
         let operators = document.querySelectorAll('.oparator');
         for(let i = 0; i < operators.length; i++){
@@ -33,14 +37,12 @@ function createCalculator(){
         } 
     }
     function clearText(){
-        let clear = document.getElementsByClassName('.clear');
         clear.addEventListener('click', function(){
             result.innerText = "";
         })
     }
 
     function calculate() {
-        let equal = document.getElementsByClassName('.do');
         equal.addEventListener('click', function(){
             result.innerText = eval(result.innerText);
         })
