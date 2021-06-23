@@ -12,6 +12,7 @@ form {
 }
 table {
     width: 100%;
+    
 }
 .result-desk {
     margin-top: 10px;
@@ -24,6 +25,9 @@ table {
     padding-top: 15px;
     text-align: end;
     font-size: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 12px;
 }
 .row {
     display: flex;

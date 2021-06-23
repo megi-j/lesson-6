@@ -16,19 +16,27 @@ function createCalculator(){
         }
     }
     function maxSimbolOnTheDesk(){
-        let maxSimbolOnTheDesk = 15;
-        let deskLength = result.innerText.length;
-        if(deskLength == maxSimbolOnTheDesk){
-            result.innerText = "Digit Limit Exceed";
-        }else if(deskLength > maxSimbolOnTheDesk){
-            result.innerText = "";
-        }         
+        if(result.innerText.length > 10){
+            result.style.fontSize = '12px';
+        }
+        // let maxSimbolOnTheDesk = 15;
+        // let deskLength = result.innerText.length;
+        // if(deskLength == maxSimbolOnTheDesk){
+        //     result.innerText = "Digit Limit Exceed";
+        // }else if(deskLength > maxSimbolOnTheDesk){
+        //     result.innerText = "";
+        // }         
     }
+    let operatorValues = ["+", "-", "*", "/"];
     
     function operatorsOntheDesk(){
         let operators = document.querySelectorAll('.oparator');
         for(let i = 0; i < operators.length; i++){
             operators[i].addEventListener('click', function(){
+                let lastSimbol = result.innerText.substr(-1);
+                if(operatorValues.indexOf(lastSimbol) > -1){
+                    result.innerText = result.innerText.substr(0, result.innerText.length - 1);
+                }
                 let operatorsValue = operators[i].value;
                 result.innerText = result.innerText + operatorsValue;
 
